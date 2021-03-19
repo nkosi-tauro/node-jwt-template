@@ -104,6 +104,8 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 
 Made with :heart: by <a href="https://github.com/nkosi-tauro" target="_blank">Nkosilathi Tauro</a>
 
+Feel free to **Fork** this repo and use it! 😊
+
 &#xa0;
 
 <a href="#top">Back to top</a>
