@@ -33,6 +33,14 @@ router.post('/login', async (req, res) => {
         }) 
     }
 
-    res.send(user)
+    const token = jwt.sign({_id:user._id}, process.env.JWT_SECRET)
+
+    res.cookie('jwt', token, {
+        httpOnly: true,
+        maxAge: 24*60*60*1000 //1 day
+    })
+    res.send({
+        message: "success"
+    })
 })
 module.exports = router;
