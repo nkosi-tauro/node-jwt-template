@@ -10,7 +10,7 @@ app.use(cookieParser())
 app.use(cors({
        // send cookies to frontend
        credentials: true,
-       origin: ['http://localhost:8081'. process.env.PORT]
+       origin: ['http://localhost:8081', process.env.PORT]
 }))
 app.use(express.json())
 app.use('/api',routes)
