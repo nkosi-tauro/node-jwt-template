@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 router.post('/register',async (req, res) => {
     const salt = await bcrypt.genSalt(10)
