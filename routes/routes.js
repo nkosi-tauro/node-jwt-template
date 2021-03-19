@@ -58,4 +58,12 @@ router.get('/user', async (req, res) => {
     res.send(data)
 })
 
+router.post('/logout', async (req, res) => {
+    // remove cookie
+    res.cookie('jwt', '', {maxAge:0})
+    res.send({
+        message : 'success'
+    })
+})
+
 module.exports = router;
