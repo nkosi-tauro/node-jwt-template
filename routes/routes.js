@@ -43,4 +43,19 @@ router.post('/login', async (req, res) => {
         message: "success"
     })
 })
+
+router.get('/user', async (req, res) => {
+    const cookie = req.cookies['jwt']
+    const claims = jwt.verify(cookie, process.env.JWT_SECRET)
+
+    if(!claims) {
+        return res.status(401).send({
+            message: 'Unauthorized'
+        }) 
+    }
+    const user = await User.findOne({_id: claims._id})
+    const {password, ...data} = (await user).toJSON
+    res.send(data)
+})
+
 module.exports = router;
