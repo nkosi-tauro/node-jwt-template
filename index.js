@@ -3,8 +3,10 @@ const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes/routes')
 const cors = require('cors')
+const cookieParser = require('cookie-parser')
 
 app = express()
+app.use(cookieParser())
 app.use(cors({
        // send cookies to frontend
        credentials: true,
