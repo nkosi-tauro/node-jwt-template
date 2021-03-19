@@ -29,13 +29,8 @@
 
 ## :dart: About ##
 
-Describe your project
+A NodeJS JWT backend with Register, Login and MongoDB
 
-## :sparkles: Features ##
-
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
 
 ## :rocket: Technologies ##
 
@@ -65,13 +60,15 @@ $ npm install
 #Setup MongoDB
 $ See MongoDB Tutorial
 
+#Setup .env
+$ set MONGO_PROD_URI and JWT_SECRET in your env file
+
 # Run the project
 $ npm  start
 
-# The server will initialize in the <http://localhost:8000>
+# The server will initialize on <http://localhost:8000>
 
-#Use Postman to test
-
+#Use Postman to test Routes
 Register Route
 POST : http://localhost:8000/api/register
 Raw -> JSON
