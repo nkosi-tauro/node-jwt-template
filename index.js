@@ -9,8 +9,6 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@vu
     console.log('connected to DB')
 })
 app = express()
-app.get('/', (req, res) => {
-    res.send('Hello')
-})
+
 
 app.listen(8000)
