@@ -17,4 +17,21 @@ router.post('/register',async (req, res) => {
     res.send(data)
 })
 
+router.post('/login', async (req, res) => {
+    const user = await User.findOne({email: req.body.email})
+
+    if(!user){
+       return res.status(404).send({
+           message: 'user not found'
+       }) 
+    }
+
+    if(!await bcrypt.compare(req.body.password, user.password)){
+        return res.status(400).send({
+            message: 'Invalid credentials'
+        }) 
+    }
+
+    res.send(user)
+})
 module.exports = router;
