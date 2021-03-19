@@ -2,8 +2,14 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes/routes')
+const cors = require('cors')
 
 app = express()
+app.use(cors({
+       // send cookies to frontend
+       credentials: true,
+       origin: ['http://localhost:8081'. process.env.PORT]
+}))
 app.use(express.json())
 app.use('/api',routes)
 
