@@ -1,6 +1,10 @@
 require('dotenv')
 const express = require('express')
 const mongoose = require('mongoose')
+const routes = require('./routes/routes')
+
+app = express()
+app.use('/api',routes)
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@vuejwtauth.mpdvx.mongodb.net/jwtdb?retryWrites=true&w=majority`, {
     useNewUrlParser : true,
@@ -8,7 +12,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@vu
 }, (err) => {
     console.log('connected to DB')
 })
-app = express()
+
 
 
 app.listen(8000)
